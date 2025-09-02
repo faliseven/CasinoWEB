@@ -1,0 +1,14 @@
+{
+  "name": "csgo-fake-casino",
+  "private": true,
+  "workspaces": ["server", "client"],
+  "scripts": {
+    "setup": "npm --prefix server i && npm --prefix client i",
+    "dev": "npm-run-all -p server client",
+    "server": "npm --prefix server run dev",
+    "client": "npm --prefix client run dev"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+} 

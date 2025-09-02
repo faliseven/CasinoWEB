@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600">
+	<defs>
+		<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+			<stop offset="0%" stop-color="#121a2a"/>
+			<stop offset="100%" stop-color="#0a0f18"/>
+		</linearGradient>
+		<linearGradient id="acc" x1="0" y1="0" x2="1" y2="1">
+			<stop offset="0%" stop-color="#6c9ef8"/>
+			<stop offset="100%" stop-color="#2ed3a2"/>
+		</linearGradient>
+	</defs>
+	<rect width="1200" height="600" fill="url(#bg)"/>
+	<g>
+		<circle cx="600" cy="300" r="170" fill="#0f1627" stroke="#22324a"/>
+		<circle cx="600" cy="300" r="140" fill="#0a1221" stroke="#22324a"/>
+		<g fill="url(#acc)">
+			<rect x="600" y="130" width="8" height="40" transform="rotate(0 600 300)"/>
+			<rect x="600" y="130" width="8" height="40" transform="rotate(30 600 300)"/>
+			<rect x="600" y="130" width="8" height="40" transform="rotate(60 600 300)"/>
+			<rect x="600" y="130" width="8" height="40" transform="rotate(90 600 300)"/>
+			<rect x="600" y="130" width="8" height="40" transform="rotate(120 600 300)"/>
+			<rect x="600" y="130" width="8" height="40" transform="rotate(150 600 300)"/>
+			<rect x="600" y="130" width="8" height="40" transform="rotate(180 600 300)"/>
+			<rect x="600" y="130" width="8" height="40" transform="rotate(210 600 300)"/>
+			<rect x="600" y="130" width="8" height="40" transform="rotate(240 600 300)"/>
+			<rect x="600" y="130" width="8" height="40" transform="rotate(270 600 300)"/>
+			<rect x="600" y="130" width="8" height="40" transform="rotate(300 600 300)"/>
+			<rect x="600" y="130" width="8" height="40" transform="rotate(330 600 300)"/>
+		</g>
+		<circle cx="600" cy="300" r="10" fill="url(#acc)"/>
+	</g>
+	<text x="600" y="520" text-anchor="middle" font-family="Segoe UI, Roboto, Arial" font-weight="700" font-size="26" fill="#c5d1ea">ROULETTE</text>
+</svg> 
