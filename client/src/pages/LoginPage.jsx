@@ -29,20 +29,25 @@ export default function LoginPage({ onLogin }) {
 	}
 
 	return (
-		<div className="auth-card">
-			<h2>{mode === 'login' ? 'Login' : 'Register'}</h2>
-			<form onSubmit={handleSubmit}>
-				{mode === 'register' && (
-					<input placeholder="Username" value={username} onChange={e => setUsername(e.target.value)} />
-				)}
-				<input placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} />
-				<input placeholder="Password" type="password" value={password} onChange={e => setPassword(e.target.value)} />
-				<button type="submit" className="btn primary">{mode === 'login' ? 'Login' : 'Create account'}</button>
-			</form>
-			{error && <div className="error">{error}</div>}
-			<button className="link" onClick={() => setMode(mode === 'login' ? 'register' : 'login')}>
-				{mode === 'login' ? 'Need an account? Register' : 'Have an account? Login'}
-			</button>
+		<div className="auth-layout">
+			<section className="auth-illustration" />
+			<section className="auth-card panel glass">
+				<h2 className="title">{mode === 'login' ? 'Welcome back' : 'Create account'}</h2>
+				<div className="subtitle">Local demo — play with skins, no real money.</div>
+				<div className="tabs">
+					<button className={mode === 'login' ? 'active' : ''} onClick={() => setMode('login')}>Login</button>
+					<button className={mode === 'register' ? 'active' : ''} onClick={() => setMode('register')}>Register</button>
+				</div>
+				<form onSubmit={handleSubmit} className="form-grid" style={{ gridTemplateColumns: '1fr' }}>
+					{mode === 'register' && (
+						<input placeholder="Username" value={username} onChange={e => setUsername(e.target.value)} />
+					)}
+					<input placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} />
+					<input placeholder="Password" type="password" value={password} onChange={e => setPassword(e.target.value)} />
+					<button type="submit" className="btn primary pulse">{mode === 'login' ? 'Login' : 'Create account'}</button>
+				</form>
+				{error && <div className="error">{error}</div>}
+			</section>
 		</div>
 	);
 } 

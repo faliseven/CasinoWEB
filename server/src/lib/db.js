@@ -51,8 +51,17 @@ export async function initDb() {
 		result TEXT NOT NULL,
 		payout_value INTEGER NOT NULL,
 		created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+		multiplier REAL,
+		meta TEXT,
 		FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE
 	);`);
+	// Optional columns for existing DBs
+	await run(`ALTER TABLE games ADD COLUMN multiplier REAL`, []).catch(() => {});
+	await run(`ALTER TABLE games ADD COLUMN meta TEXT`, []).catch(() => {});
+	// Indexes to speed stats
+	await run(`CREATE INDEX IF NOT EXISTS idx_games_created ON games(created_at DESC)`);
+	await run(`CREATE INDEX IF NOT EXISTS idx_games_type ON games(game_type)`);
+	await run(`CREATE INDEX IF NOT EXISTS idx_games_result ON games(result)`);
 }
 
 export function run(sql, params = []) {
